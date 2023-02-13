@@ -1,0 +1,126 @@
+test:
+    name: case1
+    description: Case 1. Impact of test environment and transaction rates on invoke transaction
+    workers:
+      number: 1
+    rounds:
+      - label: Invoke 100tps
+        description: Submits 1,000txs at a fixed 100tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 150tps
+        description: Submits 1,000txs at a fixed 150tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 150
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 200tps
+        description: Submits 1,000txs at a fixed 200tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 250tps
+        description: Submits 1,000txs at a fixed 250tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 250
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 300tps
+        description: Submits 1,000txs at a fixed 300tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 300
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 100tps
+        description: Submits 1,000txs at a fixed 100tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 150tps
+        description: Submits 1,000txs at a fixed 150tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 150
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 200tps
+        description: Submits 1,000txs at a fixed 200tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 250tps
+        description: Submits 1,000txs at a fixed 250tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 250
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 300tps
+        description: Submits 1,000txs at a fixed 300tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 300
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract

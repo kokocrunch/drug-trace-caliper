@@ -1,0 +1,78 @@
+test:
+    name: case2
+    description: Case 2. Impact of number of transactions
+    workers:
+      number: 1
+    rounds:
+      - label: Invoke 1,000txs
+        description: Submits 1,000txs at a fixed 200tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 10,000txs
+        description: Submits 10,000txs at a fixed 200tps send rate.
+        txNumber: 10000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 100,000txs
+        description: Submits 100,000txs at a fixed 200tps send rate.
+        txNumber: 100000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 1,000txs
+        description: Submits 1,000txs at a fixed 200tps send rate.
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 10,000txs
+        description: Submits 10,000txs at a fixed 200tps send rate.
+        txNumber: 10000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 100,000txs
+        description: Submits 100,000txs at a fixed 200tps send rate.
+        txNumber: 100000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 200
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract

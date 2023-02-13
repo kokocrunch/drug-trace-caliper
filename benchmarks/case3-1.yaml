@@ -1,0 +1,30 @@
+test:
+    name: case3-1
+    description: Case 3. Impact of simultaneous transactions
+    workers:
+      number: 100
+    rounds:
+      - label: Invoke 100tps
+        description: Submits 100 simultaneous transactions at a fixed 100tps send rate.
+        txNumber: 1
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 100tps
+        description: Submits 100 simultaneous transactions at a fixed 100tps send rate.
+        txNumber: 1
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract

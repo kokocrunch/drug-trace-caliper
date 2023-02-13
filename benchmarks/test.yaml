@@ -1,0 +1,126 @@
+test:
+    name: Test
+    description: Reduced configs for local testing
+    workers:
+      number: 1
+    rounds:
+      - label: Invoke 10tps
+        description: Submits 10txs at a fixed 10tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 10
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 20tps
+        description: Submits 10txs at a fixed 20tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 20
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 30tps
+        description: Submits 10txs at a fixed 30tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 30
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 40tps
+        description: Submits 10txs at a fixed 40tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 40
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Invoke 50tps
+        description: Submits 10txs at a fixed 50tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 50
+        workload:
+          module: workload/invoke.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 10tps
+        description: Submits 10txs at a fixed 10tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 10
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 20tps
+        description: Submits 10txs at a fixed 20tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 20
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 30tps
+        description: Submits 10txs at a fixed 30tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 30
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 40tps
+        description: Submits 10txs at a fixed 40tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 40
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
+      - label: Query 50tps
+        description: Submits 10txs at a fixed 50tps send rate.
+        txNumber: 10
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 50
+        workload:
+          module: workload/query.js
+          arguments:
+            assets: 1
+            contractId: drugcontract
