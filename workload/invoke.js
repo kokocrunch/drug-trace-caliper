@@ -14,7 +14,7 @@ class AddWorkload extends WorkloadModuleBase {
     async submitTransaction() {
         for (let i = 0; i < this.roundArguments.assets; i++) {
             const batchNum = `${this.workerIndex}_${i}`;
-            console.log(`Worker ${this.workerIndex} adding drug batch ${batchNum}.`)
+            console.log(`Worker ${this.workerIndex} transferring drug batch ${batchNum}.`)
             const myArgs = {
                 contractId: this.roundArguments.contractId,
                 contractFunction: 'addDrug',
@@ -23,6 +23,22 @@ class AddWorkload extends WorkloadModuleBase {
                 readOnly: false
             };
             await this.sutAdapter.sendRequests(myArgs);
+        }
+    }
+    
+    async cleanupWorkloadModule() {
+        for (let i = 0; i < this.roundArguments.assets; i++) {
+            const batch = `${this.workerIndex}_${i}`;
+            console.log(`Worker ${this.workerIndex}: Deleting asset ${batch}`);
+            const request = {
+                contractId: this.roundArguments.contractId,
+                contractFunction: 'deleteData',
+                invokerIdentity: 'User1',
+                contractArguments: [batch],
+                readOnly: false
+            };
+
+            await this.sutAdapter.sendRequests(request);
         }
     }
 }
